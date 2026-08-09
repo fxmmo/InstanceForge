@@ -72,6 +72,7 @@ function serialize.folder(obj)
   local data = {
     Name = obj.Name,
     ClassName = obj.ClassName,
+    Parent = obj.Parent,
     Children = {}
   }
 
@@ -92,6 +93,7 @@ function serialize.model(obj)
   local data = {
     Name = obj.Name,
     ClassName = obj.ClassName,
+    Parent = obj.Parent,
     Children = {}
   }
 

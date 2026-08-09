@@ -32,7 +32,40 @@ function serialize.basepart(obj)
 end
 
 function serialize.meshpart(obj)
-  local data = {}
+  local data = {
+    Name = obj.Name,
+    ClassName = obj.ClassName,
+    Parent = obj.Parent,
+    Anchored = obj.Anchored,
+    DoubleSided = obj.DoubleSided,
+    MeshContent = obj.MeshContent,
+    MeshId = obj.MeshId,
+    RenderFidelity = obj.RenderFidelity,
+    TextureContent = obj.TextureContent,
+    TextureId = obj.TextureId,
+    CanCollide = obj.CanCollide,
+    CanQuery = obj.CanQuery,
+    CanTouch = obj.CanTouch,
+    Transparency = obj.Transparency,
+    Material = obj.Material,
+    MaterialVariant = obj.MaterialVariant,
+    CastShadow = obj.CastShadow
+    Size = {
+      obj.Size.X,
+      obj.Size.Y,
+      obj.Size.Z
+    },
+    Color = {
+      obj.Color.R,
+      obj.Color.G,
+      obj.Color.B
+    },
+    CFrame = {
+      obj.CFrame:GetComponents()
+    }
+  }
+
+  return data
 end
 
 function serialize.folder(obj)

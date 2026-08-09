@@ -31,6 +31,10 @@ function serialize.basepart(obj)
   return data 
 end
 
+function serialize.meshpart(obj)
+  local data = {}
+end
+
 function serialize.folder(obj)
   local data = {
     Name = obj.Name,

@@ -30,3 +30,45 @@ function serialize.basepart(obj)
   
   return data 
 end
+
+function serialize.folder(obj)
+  local data = {
+    Name = obj.Name,
+    ClassName = obj.ClassName,
+    Children = {}
+  }
+
+  for _, child in ipairs(obj:GetChildren()) do 
+    if child:IsA("BasePart") then 
+      table.insert(data.Children, self.basepart(child))
+    elseif child:IsA("Folder") then 
+      table.insert(data.Children, self.folder(child))
+    elseif child:IsA("Model") then 
+      table.insert(data.Children, self.model(child)) 
+    end
+  end
+
+  return data
+end
+
+function serialize.model(obj)
+  local data = {
+    Name = obj.Name,
+    ClassName = obj.ClassName,
+    Children = {}
+  }
+
+  for _, child in ipairs(obj:GetChildren()) do 
+    if child:IsA("BasePart") then 
+      table.insert(data.Children, self.basepart(child))
+    elseif child:IsA("Folder") then 
+      table.insert(data.Children, self.folder(child))
+    elseif child:IsA("Model") then 
+      table.insert(data.Children, self.model(child))
+    end
+  end
+
+  return data 
+end
+
+return serialize

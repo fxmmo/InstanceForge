@@ -1,6 +1,6 @@
 local serialize = {}
 
-function serialize.basepart(obj)
+function serialize:basepart(obj)
   local data = {
     Name = obj.Name,
     ClassName = obj.ClassName,
@@ -31,7 +31,7 @@ function serialize.basepart(obj)
   return data 
 end
 
-function serialize.meshpart(obj)
+function serialize:meshpart(obj)
   local data = {
     Name = obj.Name,
     ClassName = obj.ClassName,
@@ -68,7 +68,7 @@ function serialize.meshpart(obj)
   return data
 end
 
-function serialize.folder(obj)
+function serialize:folder(obj)
   local data = {
     Name = obj.Name,
     ClassName = obj.ClassName,
@@ -89,7 +89,7 @@ function serialize.folder(obj)
   return data
 end
 
-function serialize.model(obj)
+function serialize:model(obj)
   local data = {
     Name = obj.Name,
     ClassName = obj.ClassName,

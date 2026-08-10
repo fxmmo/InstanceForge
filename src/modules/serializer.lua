@@ -4,7 +4,6 @@ function serialize:basepart(obj)
   local data = {
     Name = obj.Name,
     ClassName = obj.ClassName,
-    Parent = obj.Parent,
     Anchored = obj.Anchored,
     CanCollide = obj.CanCollide,
     CanQuery = obj.CanQuery,
@@ -35,7 +34,6 @@ function serialize:meshpart(obj)
   local data = {
     Name = obj.Name,
     ClassName = obj.ClassName,
-    Parent = obj.Parent,
     Anchored = obj.Anchored,
     DoubleSided = obj.DoubleSided,
     MeshContent = obj.MeshContent,

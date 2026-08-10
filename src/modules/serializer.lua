@@ -12,7 +12,7 @@ function serialize:basepart(obj)
     Transparency = obj.Transparency,
     Material = obj.Material,
     MaterialVariant = obj.MaterialVariant,
-    CastShadow = obj.CastShadow
+    CastShadow = obj.CastShadow,
     Size = {
       obj.Size.X,
       obj.Size.Y,
@@ -49,7 +49,7 @@ function serialize:meshpart(obj)
     Transparency = obj.Transparency,
     Material = obj.Material,
     MaterialVariant = obj.MaterialVariant,
-    CastShadow = obj.CastShadow
+    CastShadow = obj.CastShadow,
     Size = {
       obj.Size.X,
       obj.Size.Y,
